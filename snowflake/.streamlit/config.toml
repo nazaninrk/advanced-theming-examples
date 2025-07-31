@@ -14,8 +14,8 @@ baseFontSize = 14
 baseRadius = "0.6rem"
 codeBackgroundColor = "#f7f7f7"
 codeFontSize = "13.5px"
-headingFontSizes = ["32px", "20px", "16px"]
-headingFontWeights = 700
+headingFontSizes = ["28px", "20px", "16px", "14px", "14px"]
+headingFontWeights = [700, 700, 600, 600, 400]
 
 [theme.sidebar]
 backgroundColor = "#F7F7F7"
