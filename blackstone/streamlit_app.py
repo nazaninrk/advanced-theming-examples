@@ -12,10 +12,10 @@ title = "Blackstone theme"
 icon = "◼️"
 logo = "https://upload.wikimedia.org/wikipedia/commons/5/5b/The_Blackstone_Group_logo_%282%29.svg"
 default_css = """
-    /* Could be done via a better image, don't need CSS/theming */
-    .stLogo {{
-        border: 1px solid #ffffff;
-    }}
+/* Could be done via a better image, don't need CSS/theming */
+.stLogo {{
+    border: 1px solid #ffffff;
+}}
 """
 optional_css = None
 
