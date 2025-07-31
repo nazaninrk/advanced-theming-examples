@@ -6,16 +6,47 @@ primaryColor = "#1A6CE7"
 backgroundColor = "#FFFFFF"
 secondaryBackgroundColor = "#fbfbfb"
 textColor = "#1E252F"
+linkColor = "#1a6ce7"
 borderColor = "#D6DAE5"
 showWidgetBorder = true
 font = "Inter"
 codeFont = "Apercu Mono Pro"
 baseFontSize = 14
-baseRadius = "0.6rem"
+baseRadius = "6px"
 codeBackgroundColor = "#f7f7f7"
-codeFontSize = "13.5px"
+codeFontSize = "14px"
 headingFontSizes = ["28px", "20px", "16px", "14px", "14px"]
 headingFontWeights = [700, 700, 600, 600, 400]
+chartCategoricalColors = [
+    "#1a6ce7",
+    "#b2cdf7",
+    "#edb701",
+    "#ffe692",
+    "#52caa6",
+    "#89dbc2",
+    "#d3122f",
+    "#f9bcc5",
+    "#7257f4",
+    "#cfc5fb",
+    "#ff7d1e",
+    "#ffbe8f",
+    "#70deff",
+    "#beefff",
+    "#d45cff",
+    "#edb9ff",
+]
+chartSequentialColors = [
+    "#f1f7ff",
+    "#d6e6ff",
+    "#bbd6fe",
+    "#86b6fc",
+    "#5999f8",
+    "#3581f2",
+    "#1a6ce7",
+    "#085bd7",
+    "#004cbe",
+    "#003e9a",
+]
 
 [theme.sidebar]
 backgroundColor = "#F7F7F7"
@@ -28,4 +59,3 @@ family = "Inter"
 [[theme.fontFaces]]
 url = "app/static/ApercuMonoProRegular.ttf"
 family = "Apercu Mono Pro"
-

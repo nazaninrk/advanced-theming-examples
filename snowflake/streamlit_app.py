@@ -315,7 +315,8 @@ st.json(
 
 
 "## Chart elements"
-data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
+all_colors = st.toggle("Show all categorical colors", False)
+data = pd.DataFrame(np.random.randn(20, 16 if all_colors else 6), columns=["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"] if all_colors else ["a", "b", "c", "d", "e", "f"])
 "st.area_chart"
 stack = st.segmented_control(
     "stack",
