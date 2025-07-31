@@ -1,6 +1,9 @@
-import time
-from mega_tester import show_mega_tester
+import sys
+import os
 
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from mega_tester import show_mega_tester
 
 
 infoBackgroundColor = "#E8F4F8"
