@@ -12,7 +12,11 @@ import streamlit as st
 title = "Anthropic theme"
 icon = "🟠"
 logo = "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/anthropic.png"
-default_css = None
+default_css = """
+body {
+    -webkit-font-smoothing: antialiased;
+}
+"""
 optional_css = None
 
 

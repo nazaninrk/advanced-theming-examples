@@ -13,9 +13,9 @@ title = "Apple theme"
 icon = "🍎"
 logo = "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
 default_css = """
-body {{
+body {
     -webkit-font-smoothing: antialiased;
-}}
+}
 """
 optional_css = None
 

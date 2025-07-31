@@ -22,9 +22,9 @@ errorBackgroundColor = "#ffd1dc"
 errorTextColor = "#66000e"
     
 default_css = """
-body {{
+body {
     -webkit-font-smoothing: antialiased;
-}}
+}
 """
 
 optional_css = f"""

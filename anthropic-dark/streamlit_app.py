@@ -13,9 +13,9 @@ title = "Anthropic dark theme"
 icon = "🟤"
 logo = "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/anthropic.png"
 default_css = """
-body {{
+body {
     -webkit-font-smoothing: antialiased;
-}}
+}
 """
 optional_css = None
 
