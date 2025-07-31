@@ -12,6 +12,7 @@ linkUnderline = false
 showWidgetBorder = true
 headingFontSizes = ["33.17px", "22.12px", "18.06px", "16.1px"]
 headingFontWeights = ["700", "700", "700"]
+codeBackgroundColor = "#f4f4f4"
 
 [theme.sidebar]
 backgroundColor = "#eeeeee"
