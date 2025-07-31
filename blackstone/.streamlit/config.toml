@@ -19,7 +19,7 @@ headingFontSizes = ["44px", "30px", "22px"]
 headingFontWeights = 300
 
 [theme.sidebar]
-primaryColor = "#666666"
+primaryColor = "#333333"
 backgroundColor = "#000000"
 secondaryBackgroundColor = "#000000"
 textColor = "#ffffff"
