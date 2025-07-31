@@ -8,10 +8,36 @@ import plotly.express as px
 import pydeck as pdk
 import streamlit as st
 
-st.set_page_config("AirBnB theme", "🏡")
-st.logo("https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg")
-st.title("AirBnB theme")
 
+title = "AirBnB theme"
+icon = "🏡"
+logo = "https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg"
+default_css = None
+optional_css = None
+    
+    
+# --- Mega tester app content ---
+    
+with st.sidebar:
+    help = "Tooltip text" if st.toggle("Show tooltips", True) else None
+    disabled = st.toggle("Disable widgets", False)
+    nav_sections = st.toggle("Page sections", True)
+    many_pages = st.toggle("Many pages", False)
+    top_nav = st.toggle("Top navigation", False)
+    wide_mode = st.toggle("Wide mode", False)
+    st.divider()
+
+
+st.logo(logo)
+st.title(title)
+st.set_page_config(title, icon, layout="wide" if wide_mode else "centered")
+
+if default_css:
+    st.html(f"<style>{default_css}</style>")
+    
+if optional_css:
+    if st.checkbox("Enable CSS hacks", True):
+        st.html(f"<style>{optional_css}</style>")
 
 def page1():
     pass
@@ -25,14 +51,82 @@ def page3():
     pass
 
 
-st.navigation(
-    {
+def page4():
+    pass
+
+
+def page5():
+    pass
+
+
+def page6():
+    pass
+
+
+def page7():
+    pass
+
+
+def page8():
+    pass
+
+
+def page9():
+    pass
+
+
+def page10():
+    pass
+
+
+def page11():
+    pass
+
+
+def page12():
+    pass
+
+
+def page13():
+    pass
+
+
+if many_pages:
+    pages = {
+        "General": [
+            st.Page(page1, title="Home", icon=":material/home:"),
+            st.Page(page2, title="Data visualizations", icon=":material/monitoring:"),
+            st.Page(page3, title="Analytics", icon=":material/analytics:"),
+        ],
+        "Tools": [
+            st.Page(page4, title="Calculator", icon=":material/calculate:"),
+            st.Page(page5, title="Editor", icon=":material/edit:"),
+            st.Page(page6, title="Viewer", icon=":material/visibility:"),
+            st.Page(page7, title="Converter", icon=":material/swap_horiz:"),
+        ],
+        "Data": [
+            st.Page(page8, title="Import", icon=":material/file_upload:"),
+            st.Page(page9, title="Export", icon=":material/file_download:"),
+            st.Page(page10, title="Transform", icon=":material/transform:"),
+        ],
+        "Admin": [
+            st.Page(page11, title="Settings", icon=":material/settings:"),
+            st.Page(page12, title="Users", icon=":material/people:"),
+            st.Page(page13, title="Logs", icon=":material/history:"),
+        ],
+    }
+else:
+    pages = {
         "General": [
             st.Page(page1, title="Home", icon=":material/home:"),
             st.Page(page2, title="Data visualizations", icon=":material/monitoring:"),
         ],
         "Admin": [st.Page(page3, title="Settings", icon=":material/settings:")],
     }
+
+st.navigation(
+    pages if nav_sections else [page for section in pages.values() for page in section],
+    position="top" if top_nav else "sidebar"
 )
 
 
@@ -42,10 +136,9 @@ st.write("st.write")
 
 
 "## Text elements"
-st.markdown("st.markdown")
-st.markdown("st.markdown with help", help="Hello!")
+st.markdown("st.markdown", help=help)
 st.markdown(
-    "Markdown features: **bold** *italic* ~strikethrough~ [link](https://streamlit.io) `code` $a=b$ 🐶 :cat: :material/home: :streamlit: <- -> <-> -- >= <= ~="
+    "Markdown features: **bold** *italic* ~strikethrough~ [link](https://streamlit.io) `code` $a=b$ 🐶 :cat: :material/home: :streamlit: <- -> <-> -- >= <= ~= :small[small] $$a = b$$"
 )
 st.markdown("""
 Text colors: 
@@ -54,35 +147,30 @@ Text colors:
 
 :blue-background[blue] :green-background[green] :orange-background[orange] :red-background[red] :violet-background[violet] :gray-background[gray] :rainbow-background[rainbow] :primary-background[primary]
 
-:blue-background[:blue[blue]] :green-background[:green[green]] :orange-background[:orange[orange]] :red-background[:red[red]] :violet-background[:violet[violet]] :gray-background[:gray[gray]] :rainbow-background[:rainbow[rainbow]] :primary-background[:primary[primary]]
+:blue-badge[blue] :green-badge[green] :orange-badge[orange] :red-badge[red] :violet-badge[violet] :gray-badge[gray] :primary-badge[primary]
 """)
-st.title("st.title")
-st.title("st.title with help", help="Hello!")
-st.header("st.header")
-st.header("st.header with help", help="Hello!")
-st.header("st.header with blue divider", divider="blue")
-st.header("st.header with green divider", divider="green")
-st.header("st.header with orange divider", divider="orange")
-st.header("st.header with red divider", divider="red")
-st.header("st.header with violet divider", divider="violet")
-st.header("st.header with gray divider", divider="gray")
-st.header("st.header with rainbow divider", divider="rainbow")
-st.subheader("st.subheader")
-st.subheader("st.subheader with help", help="Hello!")
-st.caption("st.caption")
-st.caption("st.caption with help", help="Hello!")
+st.title("st.title", help=help)
+st.header("st.header", help=help)
+st.header("st.header with blue divider", divider="blue", help=help)
+st.header("st.header with green divider", divider="green", help=help)
+st.header("st.header with orange divider", divider="orange", help=help)
+st.header("st.header with red divider", divider="red", help=help)
+st.header("st.header with violet divider", divider="violet", help=help)
+st.header("st.header with gray divider", divider="gray", help=help)
+st.header("st.header with rainbow divider", divider="rainbow", help=help)
+st.subheader("st.subheader", help=help)
+st.badge("st.badge", icon=":material/home:", color="green")
+st.caption("st.caption", help=help)
 st.code("# st.code\na = 1234")
 st.code("# st.code with line numbers\na = 1234", line_numbers=True)
 st.code(
     '# st.code with line wrapping\na = "This is a very very very very very very very very very very very very long string"',
     wrap_lines=True,
 )
-# with st.echo():
-#     st.write("st.echo")
-st.latex(r"\int a x^2 \,dx")
-st.latex(r"\int a x^2 \,dx", help="Hello!")
-st.text("st.text")
-st.text("st.text with help", help="Hello!")
+with st.echo():
+    st.write("st.echo")
+st.latex(r"\int a x^2 \,dx", help=help)
+st.text("st.text", help=help)
 st.divider()
 
 
@@ -93,8 +181,11 @@ data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
 "st.dataframe"
 st.dataframe(data)
 
+"st.dataframe with selections"
+st.dataframe(data, on_select="rerun", selection_mode=["multi-row", "multi-column"])
+
 "st.data_editor"
-st.data_editor(data)
+st.data_editor(data, disabled=disabled)
 
 "st.column_config"
 data_df = pd.DataFrame(
@@ -124,6 +215,17 @@ data_df = pd.DataFrame(
         "line_chart": [[1, 2, 1], [2, 3, 1], [3, 1, 2]],
         "bar_chart": [[1, 2, 1], [2, 3, 1], [3, 1, 2]],
         "progress": [0.1, 0.2, 0.3],
+        "json": [
+            {
+                "foo": "bar",
+            },
+            {
+                "numbers": [123, 4.56],
+            },
+            {
+                "level1": {"level2": {"level3": {"a": "b"}}},
+            },
+        ],
     }
 )
 
@@ -149,6 +251,7 @@ st.data_editor(
         "line_chart": st.column_config.LineChartColumn("LineChartColumn"),
         "bar_chart": st.column_config.BarChartColumn("BarChartColumn"),
         "progress": st.column_config.ProgressColumn("ProgressColumn"),
+        "json": st.column_config.JsonColumn("JSONColumn"),
     },
 )
 
@@ -156,12 +259,12 @@ st.data_editor(
 st.table(data.iloc[0:5])
 
 col1, col2 = st.columns(2)
-col1.metric("st.metric positive", 42, 2)
-col2.metric("st.metric negative", 42, -2)
+col1.metric("st.metric positive", 1234, 123, help=help)
+col2.metric("st.metric negative", 1234, -123, help=help)
 
 col1, col2 = st.columns(2)
-col1.metric("st.metric with border positive", 42, 2, border=True)
-col2.metric("st.metric with border negative", 42, -2, border=True)
+col1.metric("st.metric with border positive", 1234, 123, border=True, help=help)
+col2.metric("st.metric with border negative", 1234, -123, border=True, help=help)
 
 "st.json"
 st.json(
@@ -180,19 +283,17 @@ st.json(
 "## Chart elements"
 data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
 "st.area_chart"
-stack = st.radio(
+stack = st.segmented_control(
     "stack",
-    [None, True, False, "normalize", "center"],
-    horizontal=True,
+    [True, False, "normalize", "center"],
     key="area_chart_stack",
 )
 st.area_chart(data, x_label="x label", y_label="y label", stack=stack)
 "st.bar_chart"
 horizontal = st.toggle("horizontal", False)
-stack = st.radio(
+stack = st.segmented_control(
     "stack",
-    [None, True, False, "normalize", "center"],
-    horizontal=True,
+    [True, False, "normalize", "center"],
     key="bar_chart_stack",
 )
 st.bar_chart(
@@ -319,44 +420,40 @@ st.graphviz_chart(
 
 
 "## Input widgets"
-if st.button("st.button"):
+if st.button("st.button", help=help, icon=":material/home:", disabled=disabled):
     st.write("You pressed the button!")
 
-if st.button("st.button primary", type="primary"):
+if st.button("st.button primary", type="primary", help=help, icon=":material/home:", disabled=disabled):
     st.write("You pressed the button!")
 
-if st.button("st.button tertiary", type="tertiary"):
+if st.button("st.button tertiary", type="tertiary", help=help, icon=":material/home:", disabled=disabled):
     st.write("You pressed the button!")
 
-if st.button("st.button with icon", icon=":material/home:"):
-    st.write("You pressed the button!")
-
-text_contents = "This is some text"
-st.download_button("st.download_button", data=text_contents)
+st.download_button("st.download_button", data="Hello!", icon=":material/home:", help=help, disabled=disabled)
 
 "st.feedback"
-st.feedback("thumbs")
-st.feedback("faces")
-st.feedback("stars")
+st.feedback("thumbs", disabled=disabled)
+st.feedback("faces", disabled=disabled)
+st.feedback("stars", disabled=disabled)
 
-st.link_button("st.link_button", "https://streamlit.io")
+st.link_button("st.link_button", "https://streamlit.io", icon=":material/home:", help=help, disabled=disabled)
 
-st.page_link("https://streamlit.io", label="st.page_link", icon=":material/home:")
+st.page_link("https://streamlit.io", label="st.page_link", icon=":material/home:", help=help, disabled=disabled)
 
-checkbox_input = st.checkbox("st.checkbox", True)
+checkbox_input = st.checkbox("st.checkbox", True, help=help, disabled=disabled)
 st.write(f"Your checkbox input is {checkbox_input}!")
 
-toggle_input = st.toggle("st.toggle", True)
+toggle_input = st.toggle("st.toggle", True, help=help, disabled=disabled)
 st.write(f"Your toggle input is {toggle_input}!")
 
-radio_input = st.radio("st.radio", ["cat", "dog"])
+radio_input = st.radio("st.radio", ["cat", "dog"], help=help, disabled=disabled)
 st.write(f"Your radio input is {radio_input}!")
 
-radio_input = st.radio("st.radio horizontal", ["cat", "dog"], horizontal=True)
+radio_input = st.radio("st.radio horizontal", ["cat", "dog"], horizontal=True, help=help, disabled=disabled)
 st.write(f"Your radio input is {radio_input}!")
 
 selectbox_input = st.selectbox(
-    "st.selectbox", ["cat", "dog", "monkey", "snake", "bird"]
+    "st.selectbox", ["cat", "dog", "monkey", "snake", "bird"], help=help, disabled=disabled
 )
 st.write(f"Your selectbox input is {selectbox_input}!")
 
@@ -364,60 +461,71 @@ multiselect_input = st.multiselect(
     "st.multiselect",
     ["cat", "dog", "monkey", "snake", "bird"],
     default=["cat", "monkey"],
+    disabled=disabled,
+    help=help,
 )
 st.write(f"Your multiselect input is {multiselect_input}!")
 
 pills_input = st.pills(
-    "st.pills multi",
+    "st.pills",
     ["cat", "dog", "monkey", "snake", "bird"],
     selection_mode="multi",
     default=["cat", "monkey"],
+    disabled=disabled,
+    help=help,
 )
 st.write(f"Your pills input is {pills_input}!")
 
 segmented_control_input = st.segmented_control(
-    "st.segmented_control multi",
+    "st.segmented_control",
     ["cat", "dog", "monkey", "snake", "bird"],
     selection_mode="multi",
     default=["cat", "monkey"],
+    disabled=disabled,
+    help=help,
 )
 st.write(f"Your segmented control input is {segmented_control_input}!")
+
+color_input = st.color_picker("st.color_picker", disabled=disabled, help=help)
+st.write(f"Your color input hex is {color_input}!")
+
+number_input = st.number_input("st.number_input", disabled=disabled, help=help)
+st.write(f"Your number input is {number_input}!")
+
+range_sliders = st.toggle("Range sliders", False)
+
+slider_input = st.slider("st.slider", value=[30, 60] if range_sliders else 30, disabled=disabled, help=help)
+st.write(f"Your slider input is {slider_input}!")
 
 select_slider_input = st.select_slider(
     "st.select_slider",
     options=["xsmall", "small", "medium", "large", "xlarge"],
-    value="small",
+    value=["small", "large"] if range_sliders else "small",
+    disabled=disabled,
+    help=help,
 )
 st.write(f"Your select_slider input is {select_slider_input}!")
 
-color_input = st.color_picker("st.color_picker")
-st.write(f"Your color input hex is {color_input}!")
-
-number_input = st.number_input("st.number_input")
-st.write(f"Your number input is {number_input}!")
-
-slider_input = st.slider("st.slider", value=30)
-st.write(f"Your slider input is {slider_input}!")
-
-date_input = st.date_input("st.date_input")
+date_input = st.date_input("st.date_input", disabled=disabled, help=help)
 st.write(f"Your date input is {date_input}!")
 
-time_input = st.time_input("st.time_input")
+time_input = st.time_input("st.time_input", disabled=disabled, help=help)
 st.write(f"Your time input is {time_input}!")
 
-text_input = st.text_input("st.text_input")
+text_input = st.text_input("st.text_input", disabled=disabled, help=help)
 st.write(f"Your text input is {text_input}!")
 
-text_area_input = st.text_area("st.text_area")
+text_area_input = st.text_area("st.text_area", disabled=disabled, help=help)
 st.write(f"Your text_area input is {text_area_input}!")
 
-audio_input = st.audio_input("st.audio_input")
+audio_input = st.audio_input("st.audio_input", disabled=disabled, help=help)
 st.write(f"Your audio input is {audio_input}!")
 
-file_input = st.file_uploader("st.file_input")
+uploaded_file = st.file_uploader("st.file_uploader", type=["png", "jpg"], disabled=disabled, help=help)
+st.write(f"Your uploaded file is {uploaded_file}!")
 
 if st.toggle("Show camera input (requires camera permission)", False):
-    cam_input = st.camera_input("st.camera_input")
+    cam_input = st.camera_input("st.camera_input", disabled=disabled, help=help)
     st.write(f"Your cam input is {cam_input}!")
 
 
@@ -427,12 +535,12 @@ st.image("https://picsum.photos/200/300")
 
 "st.audio"
 st.audio(
-    "https://file-examples.com/wp-content/storage/2017/11/file_example_MP3_700KB.mp3"
+    "https://file-examples.com/storage/fe8d06553067e519a994eaa/2017/11/file_example_MP3_700KB.mp3"
 )
 
 "st.video"
 st.video(
-    "https://file-examples.com/wp-content/storage/2017/04/file_example_MP4_480_1_5MG.mp4"
+    "https://file-examples.com/storage/fe8d06553067e519a994eaa/2017/04/file_example_MP4_480_1_5MG.mp4"
 )
 
 
@@ -450,7 +558,7 @@ c.write("st.container")
 @st.dialog("Test dialog")
 def dialog():
     st.write("Hello there!")
-    if st.button("Close"):
+    if st.button("Close", disabled=disabled):
         st.rerun()
 
 
@@ -463,15 +571,15 @@ a.write("st.empty")
 with st.expander("st.expander"):
     st.write("works!")
 
-with st.popover("st.popover"):
+with st.popover("st.popover", disabled=disabled, help=help):
     st.write("works!")
 
 st.sidebar.write("st.sidebar")
 
 with st.sidebar:
-    st.selectbox("st.selectbox sidebar", ["cat", "dog", "monkey", "snake", "bird"])
-    st.button("st.button sidebar")
-    st.checkbox("st.checkbox sidebar", True)
+    st.selectbox("st.selectbox sidebar", ["cat", "dog", "monkey", "snake", "bird"], disabled=disabled)
+    st.button("st.button sidebar", disabled=disabled)
+    st.checkbox("st.checkbox sidebar", True, disabled=disabled)
     st.info("st.info sidebar")
     st.expander("st.expander sidebar").write("works!")
 
@@ -485,9 +593,9 @@ tab_a.write("tab 2 content")
 
 "st.chat_input"
 if st.toggle("Show chat input at the bottom of the screen", False):
-    st.chat_input()
+    st.chat_input(accept_file="multiple", disabled=disabled)
 else:
-    st.container().chat_input()
+    st.container().chat_input(accept_file="multiple", disabled=disabled)
 
 "st.chat_message"
 st.chat_message("assistant").write("Hello there!")
@@ -521,7 +629,7 @@ if st.button("st.progress"):
         time.sleep(0.05)
 
 if st.button("st.spinner"):
-    with st.spinner("Wait!"):
+    with st.spinner("Wait!", show_time=True):
         time.sleep(3)
         st.write("spinner works if you saw it!")
 
@@ -558,17 +666,17 @@ def my_fragment():
 
 my_fragment()
 
-if st.button("st.rerun()"):
+if st.button("st.rerun"):
     st.rerun()
 
-if st.button("st.stop()"):
+if st.button("st.stop"):
     st.stop()
     st.write("if you see this, st.stop does not work")
 
 with st.form(key="tester"):
     "st.form"
-    text_tester = st.text_input("Your text")
-    st.form_submit_button("Submit")
+    text_tester = st.text_input("Your text", disabled=disabled, help=help)
+    st.form_submit_button("Submit", disabled=disabled, help=help)
 st.write("Your text is:", text_tester)
 
 
@@ -586,3 +694,30 @@ st.write(st.session_state)
 
 if st.button("Add st.query_params"):
     st.query_params["foo"] = "bar"
+
+"st.context.cookies"
+st.write(st.context.cookies)
+
+"st.context.headers"
+st.write(st.context.headers)
+
+"st.context.ip_address"
+st.write(st.context.ip_address)
+
+"st.context.is_embedded"
+st.write(st.context.is_embedded)
+
+"st.context.locale"
+st.write(st.context.locale)
+
+"st.context.theme.type"
+st.write(st.context.theme.type)
+
+"st.context.timezone"
+st.write(st.context.timezone)
+
+"st.context.timezone_offset"
+st.write(st.context.timezone_offset)
+
+"st.context.url"
+st.write(st.context.url)

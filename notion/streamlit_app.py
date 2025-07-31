@@ -21,50 +21,9 @@ successBackgroundColor = "#EDF3ED"
 successTextColor = "#37352f"
 errorBackgroundColor = "#FDEBEC"
 errorTextColor = "#37352f"
-    
-# pageHoverBackgroundColor = "#F0F0EF"
-# pageTextColor = "rgb(95, 94, 91)"
-# pageFontWeight = "500"
-# pageFontSize = "14px"
 
-# activePageBackgroundColor = "#F0F0EF"
-# activePageHoverBackgroundColor = "#E8E8E8"
-# activePageTextColor = "#2D2B22"
-
-# pageHeaderFontSize = "12px"
-# pageHeaderFontWeight = "500"
-# pageHeaderColor = "rgb(145, 145, 142)"
-
-
-# /* First page in sidebar nav */
-# [data-testid="stSidebarNav"] li:first-of-type a {{
-#     background-color: {activePageBackgroundColor} !important;
-# }}
-# [data-testid="stSidebarNav"] li:first-of-type a:hover {{
-#     background-color: {activePageHoverBackgroundColor} !important;
-# }}
-# [data-testid="stSidebarNav"] li:first-of-type a span {{
-#     color: {activePageTextColor} !important;
-# }}
-
-# /* Other pages in sidebar nav */
-# [data-testid="stSidebarNav"] li a:hover {{
-#     background-color: {pageHoverBackgroundColor} !important;
-# }}
-# [data-testid="stSidebarNav"] li a span {{
-#     color: {pageTextColor} !important;
-#     font-weight: {pageFontWeight} !important;
-#     font-size: {pageFontSize} !important;
-# }}
-
-# /* Headers in sidebar nav */
-# [data-testid="stSidebarNav"] header {{
-#     font-size: {pageHeaderFontSize} !important;
-#     font-weight: {pageHeaderFontWeight} !important;
-#     color: {pageHeaderColor} !important;
-# }}
-    
-css_hacks = f"""
+default_css = None
+optional_css = f"""
 [data-testid="stAlertContainer"]:has([data-testid="stAlertContentInfo"]) {{
     background-color: {infoBackgroundColor} !important;
     color: {infoTextColor} !important;
@@ -87,7 +46,6 @@ css_hacks = f"""
 """
     
     
-    
 # --- Mega tester app content ---
     
 with st.sidebar:
@@ -104,8 +62,12 @@ st.logo(logo)
 st.title(title)
 st.set_page_config(title, icon, layout="wide" if wide_mode else "centered")
 
-if st.checkbox("Enable CSS hacks", True):
-    st.html(f"<style>{css_hacks}</style>")
+if default_css:
+    st.html(f"<style>{default_css}</style>")
+    
+if optional_css:
+    if st.checkbox("Enable CSS hacks", True):
+        st.html(f"<style>{optional_css}</style>")
 
 def page1():
     pass
