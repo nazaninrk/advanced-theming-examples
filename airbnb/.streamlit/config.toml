@@ -1,0 +1,22 @@
+[server]
+enableStaticServing = true
+
+[theme]
+primaryColor = "#FF395D"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#ffffff"
+textColor = "#222222"
+linkColor = "#222222"
+borderColor = "#DDDDDD"
+showWidgetBorder = true
+showSidebarBorder = true
+basRadius = "0.5rem"
+font = "AirbnbCereal"
+baseFontSize = 15
+codeBackgroundColor = "#F7F7F7"
+headingFontSizes = ["32px", "22px", "18px"]
+headingFontWeights = 500
+
+[[theme.fontFaces]]
+url = "app/static/cereal/AirbnbCereal_W_Bk.otf"
+family = "AirbnbCereal"

@@ -1,0 +1,31 @@
+[server]
+enableStaticServing = true
+
+[theme]
+primaryColor = "#1A6CE7"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#fbfbfb"
+textColor = "#1E252F"
+borderColor = "#D6DAE5"
+showWidgetBorder = true
+font = "Inter"
+codeFont = "Apercu Mono Pro"
+baseFontSize = 14
+baseRadius = "0.6rem"
+codeBackgroundColor = "#f7f7f7"
+codeFontSize = "13.5px"
+headingFontSizes = ["32px", "20px", "16px"]
+headingFontWeights = 700
+
+[theme.sidebar]
+backgroundColor = "#F7F7F7"
+secondaryBackgroundColor = "#fbfbfb"
+
+[[theme.fontFaces]]
+url = "app/static/Inter-VariableFont_opsz,wght.ttf"
+family = "Inter"
+
+[[theme.fontFaces]]
+url = "app/static/ApercuMonoProRegular.ttf"
+family = "Apercu Mono Pro"
+

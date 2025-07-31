@@ -1,0 +1,119 @@
+[server]
+enableStaticServing = true
+
+[theme]
+primaryColor = "#000000"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#ffffff"
+textColor = "#000000"
+linkColor = "#000000"
+borderColor = "#CBCED7"
+showWidgetBorder = true
+baseRadius = "none"
+font = "GuardianSans"
+baseFontSize = 16
+codeBackgroundColor = "#f4f5f7"
+baseFontWeight = 300
+headingFont = "Sanomat"
+headingFontSizes = ["44px", "30px", "22px"]
+headingFontWeights = 300
+
+[theme.sidebar]
+backgroundColor = "#000000"
+secondaryBackgroundColor = "#000000"
+textColor = "#ffffff"
+borderColor = "#55565b"
+
+
+[[theme.fontFaces]]
+url = "app/static/guardian-sans/GuardianSansLight.otf"
+family = "GuardianSans"
+weight = 300
+
+[[theme.fontFaces]]
+url = "app/static/guardian-sans/GuardianSansRegular.otf"
+family = "GuardianSans"
+weight = 400
+
+[[theme.fontFaces]]
+url = "app/static/guardian-sans/GuardianSansMedium.otf"
+family = "GuardianSans"
+weight = 500
+
+[[theme.fontFaces]]
+url = "app/static/guardian-sans/GuardianSansSemibold.otf"
+family = "GuardianSans"
+weight = 600
+
+[[theme.fontFaces]]
+url = "app/static/guardian-sans/GuardianSansBold.otf"
+family = "GuardianSans"
+weight = 700
+
+
+[[theme.fontFaces]]
+url = "app/static/Sanomat_Family/Sanomat-Light-Trial.otf"
+family = "Sanomat"
+weight = 300
+
+[[theme.fontFaces]]
+url = "app/static/Sanomat_Family/Sanomat-Regular-Trial.otf"
+family = "Sanomat"
+weight = 400
+
+[[theme.fontFaces]]
+url = "app/static/Sanomat_Family/Sanomat-Medium-Trial.otf"
+family = "Sanomat"
+weight = 500
+
+[[theme.fontFaces]]
+url = "app/static/Sanomat_Family/Sanomat-Semibold-Trial.otf"
+family = "Sanomat"
+weight = 600
+
+[[theme.fontFaces]]
+url = "app/static/Sanomat_Family/Sanomat-Bold-Trial.otf"
+family = "Sanomat"
+weight = 700
+
+[[theme.fontFaces]]
+url = "app/static/Sanomat_Family/Sanomat-Extrabold-Trial.otf"
+family = "Sanomat"
+weight = 800
+
+[[theme.fontFaces]]
+url = "app/static/Sanomat_Family/Sanomat-Black-Trial.otf"
+family = "Sanomat"
+weight = 900
+
+
+
+[[theme.fontFaces]]
+url = "static/tiempos/TestTiemposFine-Light.otf"
+family = "Tiempos"
+weight = 300
+
+[[theme.fontFaces]]
+url = "static/tiempos/TestTiemposFine-Regular.otf"
+family = "Tiempos"
+weight = 400
+
+[[theme.fontFaces]]
+url = "static/tiempos/TestTiemposFine-Medium.otf"
+family = "Tiempos"
+weight = 500
+
+[[theme.fontFaces]]
+url = "static/tiempos/TestTiemposFine-Semibold.otf"
+family = "Tiempos"
+weight = 600
+
+[[theme.fontFaces]]
+url = "static/tiempos/TestTiemposFine-Bold.otf"
+family = "Tiempos"
+weight = 700
+
+[[theme.fontFaces]]
+url = "static/tiempos/TestTiemposFine-Black.otf"
+family = "Tiempos"
+weight = 900
