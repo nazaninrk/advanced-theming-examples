@@ -12,7 +12,11 @@ import streamlit as st
 title = "Spotify theme"
 icon = "🎵"
 logo = "https://upload.wikimedia.org/wikipedia/commons/2/26/Spotify_logo_with_text.svg"
-default_css = None
+default_css = """
+body {
+    -webkit-font-smoothing: antialiased;
+}
+"""
 optional_css = None
 
 
