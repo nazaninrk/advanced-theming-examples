@@ -5,12 +5,12 @@ secondaryBackgroundColor = "#ffffff"
 textColor = "#000000"
 borderColor = "#dcdcdc"
 font = "Arial, sans-serif"
-baseFontSize = 14
+baseFontSize = 16
 baseRadius = "none"
 linkColor = "#0a3474"
 linkUnderline = false
 showWidgetBorder = true
-headingFontSizes = ["22.12px", "18.06px", "16.1px"]
+headingFontSizes = ["33.17px", "22.12px", "18.06px", "16.1px"]
 headingFontWeights = ["700", "700", "700"]
 
 [theme.sidebar]
