@@ -21,7 +21,12 @@ successTextColor = "#024238"
 errorBackgroundColor = "#ffd1dc"
 errorTextColor = "#66000e"
     
-default_css = None
+default_css = """
+body {{
+    -webkit-font-smoothing: antialiased;
+}}
+"""
+
 optional_css = f"""
 [data-testid="stAlertContainer"]:has([data-testid="stAlertContentInfo"]) {{
     background-color: {infoBackgroundColor} !important;
