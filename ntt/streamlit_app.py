@@ -11,7 +11,11 @@ import streamlit as st
 title = "NTT Docomo theme"
 icon = "📞"
 logo = "https://upload.wikimedia.org/wikipedia/commons/1/1b/NTT_DoCoMo_logo.svg"
-default_css = None
+default_css = """
+body {
+    -webkit-font-smoothing: antialiased;
+}
+"""
 optional_css = None
 
 
