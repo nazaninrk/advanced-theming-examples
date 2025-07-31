@@ -20,13 +20,6 @@ successBackgroundColor = "#bdf9ea"
 successTextColor = "#024238"
 errorBackgroundColor = "#ffd1dc"
 errorTextColor = "#66000e"
-
-pageTextColor = "#5d6a85"
-pageFontWeight = "600"
-pageHoverBackgroundColor = "#dfe3ea"
-activePageBackgroundColor = "#d4e7ff"
-activePageHoverBackgroundColor = "#d4e7ff"
-activePageTextColor = "#085bd7"
     
 default_css = None
 optional_css = f"""
@@ -48,26 +41,6 @@ optional_css = f"""
 [data-testid="stAlertContainer"]:has([data-testid="stAlertContentError"]) {{
     background-color: {errorBackgroundColor} !important;
     color: {errorTextColor} !important;
-}}
-
-/* First page in sidebar nav */
-[data-testid="stSidebarNav"] li:first-of-type a {{
-    background-color: {activePageBackgroundColor} !important;
-}}
-[data-testid="stSidebarNav"] li:first-of-type a:hover {{
-    background-color: {activePageHoverBackgroundColor} !important;
-}}
-[data-testid="stSidebarNav"] li:first-of-type a span {{
-    color: {activePageTextColor} !important;
-}}
-
-/* Other pages in sidebar nav */
-[data-testid="stSidebarNav"] li a:hover {{
-    background-color: {pageHoverBackgroundColor} !important;
-}}
-[data-testid="stSidebarNav"] li a span {{
-    color: {pageTextColor} !important;
-    font-weight: {pageFontWeight} !important;
 }}
 """
 
